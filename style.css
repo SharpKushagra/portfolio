@@ -257,24 +257,32 @@ body:has(.proj-card:hover) .cursor { width: 20px; height: 20px; mix-blend-mode: 
 .hero {
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 100px clamp(1.5rem, 4vw, 3.5rem) 3rem;
+  align-items: stretch;
+  padding-top: 70px; /* nav height */
   border-bottom: 1px solid var(--line);
+  overflow: hidden;
 }
 
-.hero-container { width: 100%; max-width: 1400px; margin: 0 auto; }
+.hero-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 clamp(1.5rem, 4vw, 3.5rem);
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 3rem;
+  align-items: stretch;
+}
 
-.hero-top {
+/* ── Left column ── */
+.hero-left {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 1.5rem;
+  padding: 3rem 0 3rem;
 }
 
-.hero-label {
-  padding-top: 0.5rem;
-}
+.hero-label { margin-bottom: auto; }
 
 .label-tag {
   font-family: var(--font-mono);
@@ -283,43 +291,27 @@ body:has(.proj-card:hover) .cursor { width: 20px; height: 20px; mix-blend-mode: 
   letter-spacing: 1px;
 }
 
-.hero-photo-wrap {
-  flex-shrink: 0;
+/* Name block sits in the middle of the left column */
+.hero-name-block {
+  margin: auto 0;
+  padding: 2.5rem 0;
 }
 
-.hero-photo-frame {
-  width: clamp(160px, 18vw, 260px);
-  height: clamp(200px, 24vw, 330px);
+.name-row {
   overflow: hidden;
-  border-radius: 4px;
-  position: relative;
+  line-height: 0.88;
 }
-
-.hero-photo {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  filter: grayscale(20%);
-  transition: filter 0.5s;
-}
-
-.hero-photo:hover { filter: grayscale(0%); }
-
-.hero-name-block { margin-bottom: 2.5rem; }
-
-.name-row { overflow: hidden; line-height: 0.9; }
 
 .hero-name {
   font-family: var(--font-display);
-  font-size: clamp(4.5rem, 12vw, 11rem);
+  font-size: clamp(3.5rem, 8.5vw, 9rem);
   font-weight: 800;
-  letter-spacing: -5px;
+  letter-spacing: -3px;
   color: var(--white);
   display: block;
   transform: translateY(110%);
   transition: transform 0.9s var(--ease);
-  line-height: 0.92;
+  white-space: nowrap;
 }
 
 .hero-name.name-outline {
@@ -329,6 +321,7 @@ body:has(.proj-card:hover) .cursor { width: 20px; height: 20px; mix-blend-mode: 
 
 .hero-name.visible { transform: translateY(0); }
 
+/* Bottom strip */
 .hero-bottom {
   display: flex;
   justify-content: space-between;
@@ -340,12 +333,13 @@ body:has(.proj-card:hover) .cursor { width: 20px; height: 20px; mix-blend-mode: 
 .hero-bottom-left {
   display: flex;
   align-items: flex-start;
-  gap: 1.5rem;
+  gap: 1.2rem;
 }
 
 .sparkle {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: var(--gray);
+  flex-shrink: 0;
   padding-top: 0.2rem;
   animation: spin-slow 8s linear infinite;
 }
@@ -356,26 +350,27 @@ body:has(.proj-card:hover) .cursor { width: 20px; height: 20px; mix-blend-mode: 
 }
 
 .hero-tagline {
-  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+  font-size: 0.95rem;
   color: var(--gray);
   line-height: 1.65;
-  max-width: 380px;
+  max-width: 360px;
 }
 
 .hero-bottom-right {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 1.5rem;
+  gap: 1.2rem;
+  flex-shrink: 0;
 }
 
 .hero-scroll-cue {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   color: var(--gray);
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -411,6 +406,34 @@ body:has(.proj-card:hover) .cursor { width: 20px; height: 20px; mix-blend-mode: 
 .hero-socials a:hover { color: var(--white); }
 
 .link-arrow { font-size: 0.6rem; vertical-align: super; }
+
+/* ── Right column: photo ── */
+.hero-right {
+  display: flex;
+  align-items: stretch;
+}
+
+.hero-photo-frame {
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  border-left: 1px solid var(--line);
+  position: relative;
+}
+
+.hero-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  filter: grayscale(15%);
+  transition: filter 0.6s, transform 0.6s var(--ease);
+}
+
+.hero-photo:hover {
+  filter: grayscale(0%);
+  transform: scale(1.03);
+}
 
 /* ═══════════════════════════════════════════════
    MARQUEE
@@ -1093,8 +1116,24 @@ body:has(.proj-card:hover) .cursor { width: 20px; height: 20px; mix-blend-mode: 
   .nav-center { display: none; }
   .hamburger { display: flex; }
 
-  .hero { padding: 90px 1.5rem 2rem; }
-  .hero-photo-frame { width: 130px; height: 170px; }
+  .hero-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .hero-right {
+    order: -1;
+    height: 280px;
+  }
+
+  .hero-photo-frame {
+    border-left: none;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .hero-left { padding: 2rem 0; }
+
+  .hero-name { font-size: clamp(3rem, 14vw, 5.5rem); letter-spacing: -2px; }
 
   .hero-bottom { flex-direction: column; gap: 1.5rem; align-items: flex-start; }
   .hero-bottom-right { flex-direction: row; width: 100%; justify-content: space-between; }
