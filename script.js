@@ -1,82 +1,109 @@
-/* ═══════════════════════════════════════════
+/* ═══════════════════════════════════════════════
    Portfolio Script — Kushagra Saxena
-   ═══════════════════════════════════════════ */
+   ═══════════════════════════════════════════════ */
 
-// ─── Typed Text ───────────────────────────
-const roles = [
-  'SDE 1 @ PanScience',
-  'Backend Engineer',
-  'WebSocket & WebRTC Dev',
-  'AWS Cloud Developer',
-  'AI/LLM Builder',
-  'Full Stack Engineer',
-];
+/* ─── Loader ─────────────────────────────────── */
+const loader     = document.getElementById('loader');
+const loaderText = document.getElementById('loaderText');
+let loadCount    = 0;
 
-let roleIdx = 0, charIdx = 0, deleting = false;
-const typedEl = document.getElementById('typedText');
-
-function typeLoop() {
-  if (!typedEl) return;
-  const current = roles[roleIdx];
-
-  if (!deleting) {
-    typedEl.textContent = current.slice(0, charIdx + 1);
-    charIdx++;
-    if (charIdx === current.length) {
-      deleting = true;
-      setTimeout(typeLoop, 1800);
-      return;
-    }
-  } else {
-    typedEl.textContent = current.slice(0, charIdx - 1);
-    charIdx--;
-    if (charIdx === 0) {
-      deleting = false;
-      roleIdx = (roleIdx + 1) % roles.length;
-    }
+const loadInterval = setInterval(() => {
+  loadCount += Math.floor(Math.random() * 18) + 6;
+  if (loadCount >= 100) {
+    loadCount = 100;
+    clearInterval(loadInterval);
+    loaderText.textContent = '100';
+    setTimeout(() => {
+      loader.classList.add('done');
+      revealHeroText();
+    }, 350);
   }
-  setTimeout(typeLoop, deleting ? 45 : 90);
+  loaderText.textContent = String(loadCount).padStart(2, '0');
+}, 60);
+
+/* ─── Hero Text Reveal ───────────────────────── */
+function revealHeroText() {
+  const names = document.querySelectorAll('.hero-name');
+  names.forEach((el, i) => {
+    setTimeout(() => el.classList.add('visible'), i * 120);
+  });
+  document.querySelectorAll('.reveal-up[data-delay]').forEach(el => {
+    const delay = parseInt(el.dataset.delay || 0);
+    setTimeout(() => el.classList.add('visible'), delay + 200);
+  });
 }
 
-setTimeout(typeLoop, 600);
+/* ─── Custom Cursor ──────────────────────────── */
+const cursor      = document.getElementById('cursor');
+const cursorTrail = document.getElementById('cursorTrail');
+let mouseX = 0, mouseY = 0;
+let trailX = 0, trailY = 0;
 
-// ─── Navbar ───────────────────────────────
-const navbar  = document.getElementById('navbar');
-const hamburger = document.getElementById('hamburger');
-const navLinks  = document.getElementById('navLinks');
+document.addEventListener('mousemove', e => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+  cursor.style.left = mouseX + 'px';
+  cursor.style.top  = mouseY + 'px';
+});
+
+function animateTrail() {
+  trailX += (mouseX - trailX) * 0.12;
+  trailY += (mouseY - trailY) * 0.12;
+  cursorTrail.style.left = trailX + 'px';
+  cursorTrail.style.top  = trailY + 'px';
+  requestAnimationFrame(animateTrail);
+}
+animateTrail();
+
+document.querySelectorAll('a, button, .proj-card, .cert-row, .skill-list li').forEach(el => {
+  el.addEventListener('mouseenter', () => {
+    cursor.style.transform = 'translate(-50%, -50%) scale(2)';
+    cursor.style.mixBlendMode = 'difference';
+  });
+  el.addEventListener('mouseleave', () => {
+    cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+    cursor.style.mixBlendMode = 'normal';
+  });
+});
+
+/* ─── Navbar ──────────────────────────────────── */
+const nav        = document.getElementById('nav');
+const hamburger  = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+const navLinks   = document.getElementById('navLinks');
 
 window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 60);
-  updateActiveLink();
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+  setActiveLink();
 });
 
 hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('open');
-  navLinks.classList.toggle('open');
+  mobileMenu.classList.toggle('open');
+  document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
 });
 
-navLinks.querySelectorAll('a').forEach(a => {
-  a.addEventListener('click', () => {
+document.querySelectorAll('.mobile-link').forEach(link => {
+  link.addEventListener('click', () => {
     hamburger.classList.remove('open');
-    navLinks.classList.remove('open');
+    mobileMenu.classList.remove('open');
+    document.body.style.overflow = '';
   });
 });
 
-// Active nav link on scroll
+/* ─── Active Nav Link ────────────────────────── */
 const sections = [...document.querySelectorAll('section[id]')];
 
-function updateActiveLink() {
-  const scrollY = window.scrollY + 120;
-  let current = '';
-  sections.forEach(s => {
-    if (scrollY >= s.offsetTop) current = s.id;
-  });
-  navLinks.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.classList.toggle('active', a.getAttribute('href') === `#${current}`);
+function setActiveLink() {
+  const y = window.scrollY + 120;
+  let active = '';
+  sections.forEach(s => { if (y >= s.offsetTop) active = s.id; });
+  document.querySelectorAll('.nav-links a[href^="#"]').forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === `#${active}`);
   });
 }
 
-// ─── Smooth scroll ────────────────────────
+/* ─── Smooth Scroll ──────────────────────────── */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
     const target = document.querySelector(a.getAttribute('href'));
@@ -86,100 +113,134 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 
-// ─── Scroll reveal ────────────────────────
-const revealTargets = [
-  '.section-header',
-  '.about-text',
-  '.about-stats',
-  '.stat-card',
-  '.timeline-item',
-  '.skill-category',
-  '.project-card',
-  '.cert-card',
-];
-
+/* ─── Scroll Reveal ──────────────────────────── */
 const revealObs = new IntersectionObserver((entries) => {
-  entries.forEach((entry, i) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    const el    = entry.target;
+    const delay = parseInt(el.dataset.delay || 0);
+    setTimeout(() => el.classList.add('visible'), delay);
+    revealObs.unobserve(el);
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal-up:not([data-hero])').forEach(el => revealObs.observe(el));
+
+/* ─── Section Rule Animate ───────────────────── */
+const ruleObs = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
     if (entry.isIntersecting) {
-      setTimeout(() => {
-        entry.target.classList.add('visible');
-      }, entry.target.dataset.delay || 0);
-      revealObs.unobserve(entry.target);
+      entry.target.style.transform = 'scaleX(1)';
+      ruleObs.unobserve(entry.target);
     }
   });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+}, { threshold: 0.5 });
 
-document.querySelectorAll(revealTargets.join(',')).forEach((el, i) => {
-  el.classList.add('reveal');
-  el.dataset.delay = (i % 6) * 60;
-  revealObs.observe(el);
+document.querySelectorAll('.section-rule').forEach(rule => {
+  rule.style.transform = 'scaleX(0)';
+  rule.style.transformOrigin = 'left';
+  rule.style.transition = 'transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94)';
+  ruleObs.observe(rule);
 });
 
-// ─── Cursor glow follow ───────────────────
-const glow1 = document.querySelector('.hero-glow-1');
-const glow2 = document.querySelector('.hero-glow-2');
-
-document.addEventListener('mousemove', e => {
-  if (!glow1) return;
-  const x = e.clientX, y = e.clientY;
-  glow1.style.transform = `translate(${x * 0.02}px, ${y * 0.02}px)`;
-});
-
-// ─── Skill pill hover ripple ──────────────
-document.querySelectorAll('.pill').forEach(pill => {
-  pill.addEventListener('mouseenter', function (e) {
-    const rect = this.getBoundingClientRect();
-    const ripple = document.createElement('span');
-    ripple.style.cssText = `
-      position:absolute; border-radius:50%;
-      width:6px; height:6px;
-      background:rgba(0,200,255,0.4);
-      left:${e.clientX - rect.left - 3}px;
-      top:${e.clientY - rect.top - 3}px;
-      animation: rippleOut 0.5s ease-out forwards;
-      pointer-events:none;
-    `;
-    this.style.position = 'relative';
-    this.style.overflow = 'hidden';
-    this.appendChild(ripple);
-    setTimeout(() => ripple.remove(), 500);
-  });
-});
-
-// Inject ripple keyframes once
-const style = document.createElement('style');
-style.textContent = `
-  @keyframes rippleOut {
-    to { transform: scale(12); opacity: 0; }
-  }
-`;
-document.head.appendChild(style);
-
-// ─── Stats counter animation ──────────────
-const statNums = document.querySelectorAll('.stat-number');
-
+/* ─── Stats Counter ──────────────────────────── */
 const counterObs = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (!entry.isIntersecting) return;
-    const el = entry.target;
-    const rawText = el.textContent;
-    const num = parseInt(rawText.replace(/\D/g, ''), 10);
-    const suffix = rawText.replace(/\d/g, '');
-
-    let start = 0;
-    const duration = 1200;
-    const startTime = performance.now();
+    const el     = entry.target;
+    const target = parseInt(el.dataset.target);
+    const dur    = 1400;
+    const start  = performance.now();
 
     function tick(now) {
-      const elapsed = now - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      el.textContent = Math.round(eased * num) + suffix;
-      if (progress < 1) requestAnimationFrame(tick);
+      const p  = Math.min((now - start) / dur, 1);
+      const ep = 1 - Math.pow(1 - p, 4);
+      el.textContent = Math.round(ep * target);
+      if (p < 1) requestAnimationFrame(tick);
     }
     requestAnimationFrame(tick);
     counterObs.unobserve(el);
   });
 }, { threshold: 0.5 });
 
-statNums.forEach(n => counterObs.observe(n));
+document.querySelectorAll('.stat-n[data-target]').forEach(el => counterObs.observe(el));
+
+/* ─── Sparkle rotate on scroll ───────────────── */
+const sparkle = document.querySelector('.sparkle');
+if (sparkle) {
+  window.addEventListener('scroll', () => {
+    const deg = window.scrollY * 0.15;
+    sparkle.style.transform = `rotate(${deg}deg)`;
+  }, { passive: true });
+}
+
+/* ─── Magnetic Buttons ───────────────────────── */
+document.querySelectorAll('.btn-primary, .btn-secondary, .nav-contact').forEach(btn => {
+  btn.addEventListener('mousemove', e => {
+    const r  = btn.getBoundingClientRect();
+    const dx = e.clientX - (r.left + r.width  / 2);
+    const dy = e.clientY - (r.top  + r.height / 2);
+    btn.style.transform = `translate(${dx * 0.2}px, ${dy * 0.2}px)`;
+  });
+  btn.addEventListener('mouseleave', () => {
+    btn.style.transform = '';
+    btn.style.transition = 'transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94)';
+  });
+});
+
+/* ─── Skill list stagger on block hover ──────── */
+document.querySelectorAll('.skill-block').forEach(block => {
+  const items = block.querySelectorAll('.skill-list li');
+  block.addEventListener('mouseenter', () => {
+    items.forEach((li, i) => {
+      li.style.transitionDelay = `${i * 30}ms`;
+      li.style.paddingLeft = '6px';
+    });
+  });
+  block.addEventListener('mouseleave', () => {
+    items.forEach(li => {
+      li.style.transitionDelay = '0ms';
+      li.style.paddingLeft = '0px';
+    });
+  });
+});
+
+/* ─── Project card tilt ──────────────────────── */
+document.querySelectorAll('.proj-card').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const r  = card.getBoundingClientRect();
+    const x  = (e.clientX - r.left) / r.width  - 0.5;
+    const y  = (e.clientY - r.top)  / r.height - 0.5;
+    card.style.transform = `perspective(600px) rotateY(${x * 4}deg) rotateX(${-y * 4}deg) translateY(-4px)`;
+  });
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = '';
+    card.style.transition = 'transform 0.5s cubic-bezier(0.25,0.46,0.45,0.94), background 0.3s';
+  });
+});
+
+/* ─── Text scramble on section display hover ─── */
+const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+function scramble(el) {
+  const original = el.dataset.original || el.textContent;
+  el.dataset.original = original;
+  let iter = 0;
+  const clean = original.replace(/\n/g, '\n');
+  const words = clean.split('');
+  const interval = setInterval(() => {
+    el.textContent = words.map((ch, i) => {
+      if (ch === '\n') return '\n';
+      if (ch === ' ') return ' ';
+      if (i < iter) return original[i];
+      return chars[Math.floor(Math.random() * chars.length)];
+    }).join('');
+    if (iter >= words.length) clearInterval(interval);
+    iter += 2;
+  }, 28);
+}
+
+document.querySelectorAll('.section-display').forEach(el => {
+  el.style.cursor = 'default';
+  el.addEventListener('mouseenter', () => scramble(el));
+});
