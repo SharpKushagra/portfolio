@@ -3,244 +3,202 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kushagra Saxena — SDE 1</title>
+  <title>Kushagra Saxena — SDE 1 at PanScience Innovations</title>
+  <meta name="description" content="Software Development Engineer building scalable systems, real-time platforms, and AI-powered products.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Custom Cursor -->
-  <div class="cursor" id="cursor"></div>
-  <div class="cursor-trail" id="cursorTrail"></div>
+  <!-- Spotlight cursor effect -->
+  <div class="spotlight" id="spotlight"></div>
 
-  <!-- Page Loader -->
-  <div class="loader" id="loader">
-    <div class="loader-inner">
-      <span class="loader-text" id="loaderText">00</span>
-    </div>
-  </div>
-
-  <!-- Navigation -->
-  <nav class="nav" id="nav">
-    <div class="nav-container">
-      <a href="#hero" class="nav-logo">KS<span class="dot">.</span></a>
-      <div class="nav-center">
-        <span class="nav-status"><span class="status-dot"></span>Available for opportunities</span>
-      </div>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Work</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact" class="nav-contact">Let's Talk <i class="fas fa-arrow-up-right"></i></a></li>
+  <!-- ═══ NAVBAR ═══ -->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="#hero" class="nav-logo">kushagra<span class="accent">.</span></a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link nav-link--contact">Contact</a></li>
       </ul>
-      <button class="hamburger" id="hamburger">
-        <span></span><span></span>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
       </button>
-    </div>
-  </nav>
+    </nav>
+  </header>
 
-  <!-- Mobile Menu -->
-  <div class="mobile-menu" id="mobileMenu">
-    <ul>
-      <li><a href="#about" class="mobile-link">About</a></li>
-      <li><a href="#experience" class="mobile-link">Work</a></li>
-      <li><a href="#skills" class="mobile-link">Skills</a></li>
-      <li><a href="#projects" class="mobile-link">Projects</a></li>
-      <li><a href="#contact" class="mobile-link">Contact</a></li>
-    </ul>
-  </div>
-
-  <!-- Hero -->
+  <!-- ═══ HERO ═══ -->
   <section id="hero" class="hero">
-    <div class="hero-grid">
+    <div class="container hero-layout">
 
-      <!-- LEFT: label · name · info -->
-      <div class="hero-left">
-
-        <div class="hero-top-bar">
-          <span class="label-tag">[ SDE 1 · PanScience Innovations ]</span>
-          <div class="hero-socials">
-            <a href="https://github.com/SharpKushagra" target="_blank">GH<span class="link-arrow">↗</span></a>
-            <a href="https://www.linkedin.com/in/kushagra-saxena-8698a0343/" target="_blank">LI<span class="link-arrow">↗</span></a>
-            <a href="https://leetcode.com/u/KushagraSaxena/" target="_blank">LC<span class="link-arrow">↗</span></a>
-          </div>
+      <div class="hero-content fade-up">
+        <p class="hero-greeting">Hi, I'm</p>
+        <h1 class="hero-name">Kushagra<br><span class="accent-text">Saxena</span></h1>
+        <h2 class="hero-role">
+          <span class="role-line"></span>
+          SDE 1 · PanScience Innovations
+        </h2>
+        <p class="hero-bio">
+          I build <strong>scalable backend systems</strong>, real-time communication platforms,
+          and AI-powered products that ship to production. Currently at
+          <strong>PanScience Innovations</strong>, Lucknow.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn--primary">View My Work <i class="fas fa-arrow-right"></i></a>
+          <a href="#contact" class="btn btn--ghost">Get In Touch</a>
         </div>
-
-        <div class="hero-name-block">
-          <div class="name-clip">
-            <h1 class="hero-name reveal-text">KUSHAGRA</h1>
-          </div>
-          <div class="name-clip">
-            <h1 class="hero-name name-outline reveal-text" data-delay="120">SAXENA</h1>
-          </div>
+        <div class="hero-socials">
+          <a href="https://github.com/SharpKushagra" target="_blank" rel="noopener" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/kushagra-saxena-8698a0343/" target="_blank" rel="noopener" title="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://leetcode.com/u/KushagraSaxena/" target="_blank" rel="noopener" title="LeetCode">
+            <i class="fas fa-code"></i>
+          </a>
         </div>
-
-        <div class="hero-foot">
-          <div class="hero-desc">
-            <div class="sparkle">✦</div>
-            <p class="reveal-up" data-delay="280">Building scalable systems, real-time platforms<br>and AI-powered products that ship to production.</p>
-          </div>
-          <div class="hero-scroll-cue reveal-up" data-delay="360">
-            <span>Scroll</span>
-            <div class="scroll-arrow">↓</div>
-          </div>
-        </div>
-
       </div>
 
-      <!-- RIGHT: full-height portrait -->
-      <div class="hero-right">
-        <img src="photo.jpeg" alt="Kushagra Saxena" class="hero-photo">
+      <div class="hero-photo-wrap fade-up" style="--delay: 0.2s">
+        <div class="hero-photo-inner">
+          <img src="photo.jpeg" alt="Kushagra Saxena" class="hero-photo">
+          <div class="photo-glow"></div>
+        </div>
+        <div class="photo-badge badge-tl">
+          <i class="fas fa-circle-check"></i> Open to work
+        </div>
+        <div class="photo-badge badge-br">
+          <i class="fas fa-map-marker-alt"></i> Lucknow, IN
+        </div>
       </div>
 
+    </div>
+
+    <!-- Quick stats -->
+    <div class="hero-stats container">
+      <div class="stat-item">
+        <span class="stat-n" data-target="6">0</span><span class="stat-sym">+</span>
+        <span class="stat-l">Projects Delivered</span>
+      </div>
+      <div class="stat-sep"></div>
+      <div class="stat-item">
+        <span class="stat-n" data-target="2">0</span>
+        <span class="stat-l">Enterprise Clients</span>
+      </div>
+      <div class="stat-sep"></div>
+      <div class="stat-item">
+        <span class="stat-n" data-target="10">0</span><span class="stat-sym">+</span>
+        <span class="stat-l">Technologies</span>
+      </div>
+      <div class="stat-sep"></div>
+      <div class="stat-item">
+        <span class="stat-n" data-target="6">0</span><span class="stat-sym">mo</span>
+        <span class="stat-l">At PanScience</span>
+      </div>
     </div>
   </section>
 
-  <!-- Marquee Strip -->
-  <div class="marquee-strip">
-    <div class="marquee-inner">
-      <span>WebSocket</span><span class="sep">✦</span>
-      <span>WebRTC</span><span class="sep">✦</span>
-      <span>FastAPI</span><span class="sep">✦</span>
-      <span>AWS</span><span class="sep">✦</span>
-      <span>Docker</span><span class="sep">✦</span>
-      <span>Kafka</span><span class="sep">✦</span>
-      <span>LLM</span><span class="sep">✦</span>
-      <span>RAG</span><span class="sep">✦</span>
-      <span>MCP</span><span class="sep">✦</span>
-      <span>REST APIs</span><span class="sep">✦</span>
-      <span>Python</span><span class="sep">✦</span>
-      <span>React</span><span class="sep">✦</span>
-      <span>WebSocket</span><span class="sep">✦</span>
-      <span>WebRTC</span><span class="sep">✦</span>
-      <span>FastAPI</span><span class="sep">✦</span>
-      <span>AWS</span><span class="sep">✦</span>
-      <span>Docker</span><span class="sep">✦</span>
-      <span>Kafka</span><span class="sep">✦</span>
-      <span>LLM</span><span class="sep">✦</span>
-      <span>RAG</span><span class="sep">✦</span>
-      <span>MCP</span><span class="sep">✦</span>
-      <span>REST APIs</span><span class="sep">✦</span>
-      <span>Python</span><span class="sep">✦</span>
-      <span>React</span><span class="sep">✦</span>
-    </div>
-  </div>
-
-  <!-- About -->
+  <!-- ═══ ABOUT ═══ -->
   <section id="about" class="section about">
-    <div class="section-container">
-      <div class="section-header">
-        <span class="section-num">[ 01 ]</span>
-        <div class="section-rule"></div>
-        <span class="section-label-text">About</span>
+    <div class="container">
+      <div class="section-tag fade-up">
+        <span class="tag-line"></span>
+        <span>01. About Me</span>
       </div>
       <div class="about-grid">
-        <div class="about-heading-col">
-          <h2 class="section-display reveal-up">WHO<br>I AM</h2>
+        <div class="about-text fade-up">
+          <h2 class="section-title">A little about<br><span class="accent-text">who I am</span></h2>
+          <p>I'm a <strong>Software Development Engineer (SDE 1)</strong> at PanScience Innovations — building systems that reach production and serve real users. My work spans real-time communication infrastructure (WebSocket, WebRTC), cloud-backed REST APIs, AI-powered platforms, and enterprise CRM solutions for clients including <strong>S Chand</strong> and <strong>Dish TV</strong>.</p>
+          <p>I'm pursuing a B.Tech in Computer Science with a specialization in Data Science and a minor in Robotics at <strong>Shri Ramswaroop Memorial College of Engineering and Management, Lucknow</strong>. I joined PSI as an LLM Intern in December 2025 and was promoted to SDE 1 in May 2026.</p>
+          <p>I care about code that ships — clean APIs, scalable services, and systems that handle edge cases gracefully.</p>
+          <a href="https://github.com/SharpKushagra" target="_blank" class="btn btn--outline">
+            <i class="fab fa-github"></i> View GitHub
+          </a>
         </div>
-        <div class="about-content-col">
-          <div class="about-photo-side">
-            <div class="about-photo-wrap">
-              <img src="photo.jpeg" alt="Kushagra Saxena" class="about-photo">
-              <div class="about-photo-label">
-                <span>Lucknow, India</span>
-                <span>SDE 1 · 2026</span>
-              </div>
-            </div>
-          </div>
-          <div class="about-text-side">
-            <p class="reveal-up">I'm a <strong>Software Development Engineer</strong> at PanScience Innovations — building systems that reach production. My work spans real-time communication infrastructure, cloud-backed APIs, AI-powered platforms, and enterprise CRM solutions.</p>
-            <p class="reveal-up" data-delay="80">Currently pursuing B.Tech in Computer Science (Data Science + Robotics minor) at <strong>SRMCEM, Lucknow</strong>. I joined PSI as an LLM Intern in December 2025 and was promoted to SDE 1 in May 2026.</p>
-            <p class="reveal-up" data-delay="140">I care about code that ships — clean APIs, scalable services, and systems that don't break at 2am.</p>
-            <div class="about-stats reveal-up" data-delay="200">
-              <div class="stat">
-                <span class="stat-n" data-target="6">0</span>
-                <span class="stat-l">Projects at PSI</span>
-              </div>
-              <div class="stat">
-                <span class="stat-n" data-target="2">0</span>
-                <span class="stat-l">Enterprise Clients</span>
-              </div>
-              <div class="stat">
-                <span class="stat-n" data-target="5">0</span>
-                <span class="stat-l">Tech Stacks</span>
-              </div>
-            </div>
+        <div class="about-photo fade-up" style="--delay: 0.15s">
+          <div class="about-photo-frame">
+            <img src="photo.jpeg" alt="Kushagra Saxena">
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Experience -->
+  <!-- ═══ EXPERIENCE ═══ -->
   <section id="experience" class="section experience">
-    <div class="section-container">
-      <div class="section-header">
-        <span class="section-num">[ 02 ]</span>
-        <div class="section-rule"></div>
-        <span class="section-label-text">Work</span>
+    <div class="container">
+      <div class="section-tag fade-up">
+        <span class="tag-line"></span>
+        <span>02. Experience</span>
       </div>
-      <h2 class="section-display reveal-up">EXPERIENCE</h2>
+      <h2 class="section-title fade-up">Where I've <span class="accent-text">Worked</span></h2>
 
-      <div class="exp-list">
+      <div class="timeline fade-up">
 
-        <div class="exp-item reveal-up">
-          <div class="exp-meta">
-            <span class="exp-num">01</span>
-            <span class="exp-date">May 2026 — Present</span>
-          </div>
-          <div class="exp-body">
-            <div class="exp-top-row">
+        <div class="tl-item">
+          <div class="tl-dot tl-dot--active"></div>
+          <div class="tl-card">
+            <div class="tl-head">
               <div>
-                <h3 class="exp-role">Software Development Engineer I</h3>
-                <p class="exp-company">PanScience Innovations · Lucknow, India</p>
+                <h3>Software Development Engineer I</h3>
+                <p class="tl-company"><i class="fas fa-building"></i> PanScience Innovations</p>
+                <p class="tl-loc"><i class="fas fa-location-dot"></i> Lucknow, India</p>
               </div>
-              <span class="exp-badge">Current</span>
+              <div class="tl-right">
+                <span class="tl-date">May 2026 — Present</span>
+                <span class="badge badge--green">Current</span>
+              </div>
             </div>
-            <p class="exp-desc">Promoted from LLM Intern. Leading development of real-time communication infrastructure, enterprise CRM systems, and AI-powered web platforms. Owning full feature delivery — from architecture to production deployment on AWS.</p>
-            <div class="exp-tags">
-              <span>WebSocket</span><span>WebRTC</span><span>FastAPI</span><span>AWS</span><span>Docker</span><span>Kafka</span>
+            <p class="tl-desc">Promoted from LLM Intern. Leading development of real-time communication infrastructure, enterprise CRM systems, and AI-powered products. Owning end-to-end delivery across cloud, backend, and real-time systems.</p>
+            <div class="tech-pills">
+              <span>WebSocket</span><span>WebRTC</span><span>FastAPI</span>
+              <span>AWS</span><span>Docker</span><span>Kafka</span><span>REST APIs</span>
             </div>
           </div>
         </div>
 
-        <div class="exp-item reveal-up" data-delay="80">
-          <div class="exp-meta">
-            <span class="exp-num">02</span>
-            <span class="exp-date">Dec 2025 — May 2026</span>
-          </div>
-          <div class="exp-body">
-            <div class="exp-top-row">
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-head">
               <div>
-                <h3 class="exp-role">LLM Intern</h3>
-                <p class="exp-company">PanScience Innovations · Lucknow, India</p>
+                <h3>LLM Intern</h3>
+                <p class="tl-company"><i class="fas fa-building"></i> PanScience Innovations</p>
+                <p class="tl-loc"><i class="fas fa-location-dot"></i> Lucknow, India</p>
+              </div>
+              <div class="tl-right">
+                <span class="tl-date">Dec 2025 — May 2026</span>
               </div>
             </div>
-            <p class="exp-desc">Built and optimized AI-driven solutions using Large Language Models. Contributed across backend development, prompt engineering, MCP integrations, and generative AI workflows. Rapidly expanded to full-stack and cloud infrastructure work.</p>
-            <div class="exp-tags">
+            <p class="tl-desc">Built and optimized AI-driven solutions using Large Language Models. Contributed to backend development, prompt engineering, MCP integrations, and generative AI workflows. Rapidly expanded scope to cloud infrastructure.</p>
+            <div class="tech-pills">
               <span>LLM</span><span>RAG</span><span>MCP</span><span>Prompt Engineering</span><span>Python</span>
             </div>
           </div>
         </div>
 
-        <div class="exp-item reveal-up" data-delay="140">
-          <div class="exp-meta">
-            <span class="exp-num">03</span>
-            <span class="exp-date">Sep 2025 — Jan 2026</span>
-          </div>
-          <div class="exp-body">
-            <div class="exp-top-row">
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-head">
               <div>
-                <h3 class="exp-role">Software Engineering Intern</h3>
-                <p class="exp-company">Setukrite Technologies · Lucknow, India</p>
+                <h3>Software Engineering Intern</h3>
+                <p class="tl-company"><i class="fas fa-building"></i> Setukrite Technologies</p>
+                <p class="tl-loc"><i class="fas fa-location-dot"></i> Lucknow, India</p>
+              </div>
+              <div class="tl-right">
+                <span class="tl-date">Sep 2025 — Jan 2026</span>
               </div>
             </div>
-            <p class="exp-desc">Built an AI-powered platform for analyzing health reports. Handled full-stack development, system design, dynamic database architecture, and AI integration for medical data analysis.</p>
-            <div class="exp-tags">
+            <p class="tl-desc">Built an AI-powered platform for health report analysis. Handled full-stack development, system design, dynamic database setup, and AI integration for medical data processing.</p>
+            <div class="tech-pills">
               <span>AI</span><span>Full Stack</span><span>System Design</span><span>Database</span>
             </div>
           </div>
@@ -250,303 +208,264 @@
     </div>
   </section>
 
-  <!-- Skills -->
+  <!-- ═══ SKILLS ═══ -->
   <section id="skills" class="section skills">
-    <div class="section-container">
-      <div class="section-header">
-        <span class="section-num">[ 03 ]</span>
-        <div class="section-rule"></div>
-        <span class="section-label-text">Skills</span>
+    <div class="container">
+      <div class="section-tag fade-up">
+        <span class="tag-line"></span>
+        <span>03. Skills</span>
       </div>
-      <h2 class="section-display skills-display reveal-up">THE STACK<br>I BUILD WITH</h2>
+      <h2 class="section-title fade-up">Technologies I <span class="accent-text">Work With</span></h2>
 
-      <div class="skills-grid">
-
-        <div class="skill-block reveal-up">
-          <div class="skill-block-header">
-            <span class="skill-block-num">—01</span>
-            <h4>Cloud &amp; DevOps</h4>
+      <div class="skills-layout fade-up">
+        <div class="skill-group">
+          <h4 class="skill-group-title"><i class="fab fa-aws"></i> Cloud &amp; DevOps</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">AWS</span>
+            <span class="skill-tag">AWS S3</span>
+            <span class="skill-tag">AWS IAM</span>
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">Kafka</span>
+            <span class="skill-tag">SMTP</span>
           </div>
-          <ul class="skill-list">
-            <li><span>AWS</span><i class="fas fa-arrow-up-right"></i></li>
-            <li><span>AWS S3</span><i class="fas fa-arrow-up-right"></i></li>
-            <li><span>AWS IAM</span><i class="fas fa-arrow-up-right"></i></li>
-            <li><span>Docker</span><i class="fas fa-arrow-up-right"></i></li>
-            <li><span>Kafka</span><i class="fas fa-arrow-up-right"></i></li>
-            <li><span>SMTP</span><i class="fas fa-arrow-up-right"></i></li>
-          </ul>
         </div>
-
-        <div class="skill-block reveal-up" data-delay="60">
-          <div class="skill-block-header">
-            <span class="skill-block-num">—02</span>
-            <h4>Backend &amp; APIs</h4>
+        <div class="skill-group">
+          <h4 class="skill-group-title"><i class="fas fa-server"></i> Backend &amp; APIs</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">FastAPI</span>
+            <span class="skill-tag">REST APIs</span>
+            <span class="skill-tag">WebSocket</span>
+            <span class="skill-tag">WebRTC</span>
+            <span class="skill-tag">MCP</span>
+            <span class="skill-tag">APIs</span>
+            <span class="skill-tag">Django</span>
+            <span class="skill-tag">Spring Boot</span>
           </div>
-          <ul class="skill-list">
-            <li><span>FastAPI</span><i class="fas fa-arrow-up-right"></i></li>
-            <li><span>REST APIs</span><i class="fas fa-arrow-up-right"></i></li>
-            <li><span>WebSocket</span><i class="fas fa-arrow-up-right"></i></li>
-            <li><span>WebRTC</span><i class="fas fa-arrow-up-right"></i></li>
-            <li><span>MCP</span><i class="fas fa-arrow-up-right"></i></li>
-            <li><span>Django</span><i class="fas fa-arrow-up-right"></i></li>
-            <li><span>Spring Boot</span><i class="fas fa-arrow-up-right"></i></li>
-          </ul>
         </div>
-
-        <div class="skill-block reveal-up" data-delay="120">
-          <div class="skill-block-header">
-            <span class="skill-block-num">—03</span>
-            <h4>AI &amp; LLM</h4>
+        <div class="skill-group">
+          <h4 class="skill-group-title"><i class="fas fa-brain"></i> AI &amp; ML</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">LLM</span>
+            <span class="skill-tag">RAG</span>
+            <span class="skill-tag">Prompt Engineering</span>
+            <span class="skill-tag">Generative AI</span>
+            <span class="skill-tag">AI Agents</span>
+            <span class="skill-tag">NLP</span>
           </div>
-          <ul class="skill-list">
-            <li><span>LLM</span><i class="fas fa-arrow-up-right"></i></li>
-            <li><span>RAG</span><i class="fas fa-arrow-up-right"></i></li>
-            <li><span>Prompt Engineering</span><i class="fas fa-arrow-up-right"></i></li>
-            <li><span>Generative AI</span><i class="fas fa-arrow-up-right"></i></li>
-            <li><span>AI Agents</span><i class="fas fa-arrow-up-right"></i></li>
-          </ul>
         </div>
-
-        <div class="skill-block reveal-up" data-delay="180">
-          <div class="skill-block-header">
-            <span class="skill-block-num">—04</span>
-            <h4>Languages &amp; Tools</h4>
+        <div class="skill-group">
+          <h4 class="skill-group-title"><i class="fas fa-code"></i> Languages &amp; Frontend</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">C++</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">React JS</span>
+            <span class="skill-tag">System Design</span>
           </div>
-          <ul class="skill-list">
-            <li><span>Python</span><i class="fas fa-arrow-up-right"></i></li>
-            <li><span>Java</span><i class="fas fa-arrow-up-right"></i></li>
-            <li><span>C++</span><i class="fas fa-arrow-up-right"></i></li>
-            <li><span>JavaScript</span><i class="fas fa-arrow-up-right"></i></li>
-            <li><span>React JS</span><i class="fas fa-arrow-up-right"></i></li>
-            <li><span>System Design</span><i class="fas fa-arrow-up-right"></i></li>
-          </ul>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- Projects -->
+  <!-- ═══ PROJECTS ═══ -->
   <section id="projects" class="section projects">
-    <div class="section-container">
-      <div class="section-header">
-        <span class="section-num">[ 04 ]</span>
-        <div class="section-rule"></div>
-        <span class="section-label-text">Projects</span>
+    <div class="container">
+      <div class="section-tag fade-up">
+        <span class="tag-line"></span>
+        <span>04. Projects</span>
       </div>
-      <h2 class="section-display reveal-up">IMPACTFUL<br>WORK</h2>
+      <h2 class="section-title fade-up">Things I've <span class="accent-text">Built</span></h2>
 
-      <div class="proj-group">
-        <p class="proj-group-label reveal-up">PanScience Innovations — Delivered</p>
-        <div class="proj-grid">
+      <p class="section-sub fade-up">Projects delivered at PanScience Innovations ↓</p>
 
-          <article class="proj-card reveal-up">
-            <div class="proj-card-top">
-              <span class="proj-idx">01</span>
-              <span class="proj-cat">Internal Platform</span>
-            </div>
-            <h3 class="proj-name">Own360</h3>
-            <p class="proj-desc">A real-time communication platform built for the entire firm — live messaging, video conferencing, presence, and room management powered by WebSocket and WebRTC.</p>
-            <div class="proj-footer">
-              <div class="proj-tech">WebSocket · WebRTC · FastAPI · Docker</div>
-            </div>
-          </article>
+      <div class="projects-grid">
 
-          <article class="proj-card reveal-up" data-delay="60">
-            <div class="proj-card-top">
-              <span class="proj-idx">02</span>
-              <span class="proj-cat">Client Project</span>
+        <div class="proj-card proj-card--featured fade-up">
+          <div class="proj-card-top">
+            <div class="proj-icon"><i class="fas fa-satellite-dish"></i></div>
+            <div class="proj-links">
+              <span class="proj-type">Internal Platform</span>
             </div>
-            <h3 class="proj-name">Granth AI</h3>
-            <p class="proj-desc">AI-powered educational platform for S Chand — India's largest publishing house. Intelligent content delivery, LLM-based Q&amp;A, and personalized learning on academic material.</p>
-            <div class="proj-footer">
-              <div class="proj-tech">LLM · RAG · FastAPI · AWS</div>
-            </div>
-          </article>
-
-          <article class="proj-card reveal-up" data-delay="120">
-            <div class="proj-card-top">
-              <span class="proj-idx">03</span>
-              <span class="proj-cat">Client Project</span>
-            </div>
-            <h3 class="proj-name">S Chand CRM</h3>
-            <p class="proj-desc">Enterprise CRM for S Chand — streamlining sales pipeline, customer data management, and internal coordination with real-time dashboards and API integrations.</p>
-            <div class="proj-footer">
-              <div class="proj-tech">Django · Kafka · AWS · REST APIs</div>
-            </div>
-          </article>
-
-          <article class="proj-card reveal-up" data-delay="180">
-            <div class="proj-card-top">
-              <span class="proj-idx">04</span>
-              <span class="proj-cat">Client Project</span>
-            </div>
-            <h3 class="proj-name">Dish TV CRM</h3>
-            <p class="proj-desc">Custom CRM for Dish TV managing subscriber lifecycle, support ticketing, and field agent workflows. Event-driven messaging and AWS-backed infrastructure at scale.</p>
-            <div class="proj-footer">
-              <div class="proj-tech">FastAPI · Kafka · AWS S3 · AWS IAM</div>
-            </div>
-          </article>
-
-          <article class="proj-card reveal-up" data-delay="240">
-            <div class="proj-card-top">
-              <span class="proj-idx">05</span>
-              <span class="proj-cat">Product</span>
-            </div>
-            <h3 class="proj-name">flexibench.io</h3>
-            <p class="proj-desc">A professional portfolio website platform built at PSI — responsive, performance-optimised, designed to represent professionals and businesses.</p>
-            <div class="proj-footer">
-              <div class="proj-tech">React · AWS S3 · SMTP · REST APIs</div>
-              <a href="https://flexibench.io" target="_blank" class="proj-link">Visit ↗</a>
-            </div>
-          </article>
-
-          <article class="proj-card reveal-up" data-delay="300">
-            <div class="proj-card-top">
-              <span class="proj-idx">06</span>
-              <span class="proj-cat">Product</span>
-            </div>
-            <h3 class="proj-name">Botza.panscience.ai</h3>
-            <p class="proj-desc">AI-powered conversational platform showcasing intelligent bot capabilities — serves as an interactive product demonstration for PSI client engagements.</p>
-            <div class="proj-footer">
-              <div class="proj-tech">LLM · WebSocket · FastAPI · MCP</div>
-              <a href="https://botza.panscience.ai" target="_blank" class="proj-link">Visit ↗</a>
-            </div>
-          </article>
-
-        </div>
-      </div>
-
-      <div class="proj-group">
-        <p class="proj-group-label reveal-up">Personal &amp; Open Source</p>
-        <div class="proj-grid proj-grid-personal">
-
-          <article class="proj-card reveal-up">
-            <div class="proj-card-top">
-              <span class="proj-idx">07</span>
-              <span class="proj-cat">AI</span>
-            </div>
-            <h3 class="proj-name">Advanced ChatBot</h3>
-            <p class="proj-desc">RAG assistant with FastAPI backend, Streamlit frontend, vectorstore ingestion, and Dockerised deployment with pytest coverage.</p>
-            <div class="proj-footer">
-              <div class="proj-tech">RAG · FastAPI · Streamlit · Docker</div>
-              <a href="https://github.com/SharpKushagra/Advanced-ChatBot" target="_blank" class="proj-link">GitHub ↗</a>
-            </div>
-          </article>
-
-          <article class="proj-card reveal-up" data-delay="80">
-            <div class="proj-card-top">
-              <span class="proj-idx">08</span>
-              <span class="proj-cat">Systems</span>
-            </div>
-            <h3 class="proj-name">Deribit Trading System</h3>
-            <p class="proj-desc">High-performance C++ system connecting to Deribit exchange via REST and WebSocket — real-time order streaming and low-latency optimisation.</p>
-            <div class="proj-footer">
-              <div class="proj-tech">C++ · WebSocket · REST API</div>
-              <a href="https://github.com/SharpKushagra/deribit" target="_blank" class="proj-link">GitHub ↗</a>
-            </div>
-          </article>
-
-          <article class="proj-card reveal-up" data-delay="160">
-            <div class="proj-card-top">
-              <span class="proj-idx">09</span>
-              <span class="proj-cat">Full Stack</span>
-            </div>
-            <h3 class="proj-name">SkillMatch App</h3>
-            <p class="proj-desc">Django &amp; SQLite web app connecting users to jobs and courses with RESTful APIs and dynamic skill-matching algorithms.</p>
-            <div class="proj-footer">
-              <div class="proj-tech">Django · SQLite · REST API</div>
-              <a href="https://github.com/SharpKushagra/SkillMatchApp" target="_blank" class="proj-link">GitHub ↗</a>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Certifications -->
-  <section class="section certs">
-    <div class="section-container">
-      <div class="section-header">
-        <span class="section-num">[ 05 ]</span>
-        <div class="section-rule"></div>
-        <span class="section-label-text">Certifications</span>
-      </div>
-      <div class="certs-list">
-        <div class="cert-row reveal-up">
-          <span class="cert-issuer">IBM</span>
-          <span class="cert-name">Python 101</span>
-          <div class="cert-line"></div>
-          <span class="cert-year">2024</span>
-        </div>
-        <div class="cert-row reveal-up" data-delay="50">
-          <span class="cert-issuer">IBM</span>
-          <span class="cert-name">Data Science Tools</span>
-          <div class="cert-line"></div>
-          <span class="cert-year">2024</span>
-        </div>
-        <div class="cert-row reveal-up" data-delay="100">
-          <span class="cert-issuer">IBM</span>
-          <span class="cert-name">Cloud Computing Essentials</span>
-          <div class="cert-line"></div>
-          <span class="cert-year">2024</span>
-        </div>
-        <div class="cert-row reveal-up" data-delay="150">
-          <span class="cert-issuer">IBM</span>
-          <span class="cert-name">Big Data</span>
-          <div class="cert-line"></div>
-          <span class="cert-year">2024</span>
-        </div>
-        <div class="cert-row reveal-up" data-delay="200">
-          <span class="cert-issuer">GUVI</span>
-          <span class="cert-name">Python Certification</span>
-          <div class="cert-line"></div>
-          <span class="cert-year">2024</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="section contact">
-    <div class="section-container">
-      <div class="section-header">
-        <span class="section-num">[ 06 ]</span>
-        <div class="section-rule"></div>
-        <span class="section-label-text">Contact</span>
-      </div>
-      <div class="contact-inner">
-        <h2 class="contact-heading reveal-up">LET'S BUILD<br>SOMETHING<br><em>GREAT.</em></h2>
-        <div class="contact-right">
-          <p class="contact-sub reveal-up">Open to SDE roles, freelance projects, and interesting collaborations. Don't hesitate to reach out.</p>
-          <div class="contact-links reveal-up" data-delay="100">
-            <a href="https://www.linkedin.com/in/kushagra-saxena-8698a0343/" target="_blank" class="contact-link">
-              LinkedIn <span class="link-arrow">↗</span>
-            </a>
-            <a href="https://github.com/SharpKushagra" target="_blank" class="contact-link">
-              GitHub <span class="link-arrow">↗</span>
-            </a>
-            <a href="https://leetcode.com/u/KushagraSaxena/" target="_blank" class="contact-link">
-              LeetCode <span class="link-arrow">↗</span>
-            </a>
+          </div>
+          <h3>Own360</h3>
+          <p>A full-featured real-time communication platform built from scratch for PanScience — live messaging, video conferencing, presence indicators, and room management powered by WebSocket and WebRTC.</p>
+          <div class="tech-pills">
+            <span>WebSocket</span><span>WebRTC</span><span>FastAPI</span><span>Python</span><span>Docker</span>
           </div>
         </div>
+
+        <div class="proj-card proj-card--featured fade-up" style="--delay: 0.1s">
+          <div class="proj-card-top">
+            <div class="proj-icon"><i class="fas fa-book-open"></i></div>
+            <div class="proj-links">
+              <span class="proj-type">Client · S Chand</span>
+            </div>
+          </div>
+          <h3>Granth AI</h3>
+          <p>AI-powered educational platform for S Chand, India's largest publishing house. Intelligent content delivery, LLM-based Q&amp;A, and personalized academic learning experiences.</p>
+          <div class="tech-pills">
+            <span>LLM</span><span>RAG</span><span>FastAPI</span><span>AWS</span><span>Python</span>
+          </div>
+        </div>
+
+        <div class="proj-card fade-up" style="--delay: 0.05s">
+          <div class="proj-card-top">
+            <div class="proj-icon"><i class="fas fa-users-cog"></i></div>
+            <span class="proj-type">Client · S Chand</span>
+          </div>
+          <h3>S Chand CRM</h3>
+          <p>Enterprise CRM streamlining sales pipeline, customer data, and coordination with real-time dashboards and deep API integrations.</p>
+          <div class="tech-pills">
+            <span>Django</span><span>Kafka</span><span>AWS</span><span>REST APIs</span>
+          </div>
+        </div>
+
+        <div class="proj-card fade-up" style="--delay: 0.1s">
+          <div class="proj-card-top">
+            <div class="proj-icon"><i class="fas fa-tv"></i></div>
+            <span class="proj-type">Client · Dish TV</span>
+          </div>
+          <h3>Dish TV CRM</h3>
+          <p>Custom CRM managing subscriber lifecycle, support ticketing, and field agent workflows with event-driven AWS-backed infrastructure.</p>
+          <div class="tech-pills">
+            <span>FastAPI</span><span>Kafka</span><span>AWS S3</span><span>AWS IAM</span>
+          </div>
+        </div>
+
+        <div class="proj-card fade-up" style="--delay: 0.15s">
+          <div class="proj-card-top">
+            <div class="proj-icon"><i class="fas fa-globe"></i></div>
+            <div class="proj-links">
+              <a href="https://flexibench.io" target="_blank" rel="noopener" title="Live Site">
+                <i class="fas fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+          <h3>flexibench.io</h3>
+          <p>Professional portfolio product built at PSI — fully responsive, performance-optimised, representing professionals and businesses with a clean modern aesthetic.</p>
+          <div class="tech-pills">
+            <span>React JS</span><span>AWS S3</span><span>SMTP</span><span>REST APIs</span>
+          </div>
+        </div>
+
+        <div class="proj-card fade-up" style="--delay: 0.2s">
+          <div class="proj-card-top">
+            <div class="proj-icon"><i class="fas fa-robot"></i></div>
+            <div class="proj-links">
+              <a href="https://botza.panscience.ai" target="_blank" rel="noopener" title="Live Site">
+                <i class="fas fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+          <h3>Botza.panscience.ai</h3>
+          <p>AI-powered conversational platform showcasing PSI's intelligent bot capabilities — serves as an interactive demonstration for client engagements.</p>
+          <div class="tech-pills">
+            <span>LLM</span><span>WebSocket</span><span>FastAPI</span><span>MCP</span>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="section-sub fade-up" style="margin-top: 3rem">Personal &amp; Open Source ↓</p>
+
+      <div class="projects-grid projects-grid--small">
+        <div class="proj-card fade-up">
+          <div class="proj-card-top">
+            <div class="proj-icon proj-icon--sm"><i class="fas fa-comments"></i></div>
+            <div class="proj-links">
+              <a href="https://github.com/SharpKushagra/Advanced-ChatBot" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <h3>Advanced ChatBot (RAG)</h3>
+          <p>RAG assistant with FastAPI backend, Streamlit frontend, vectorstore ingestion, and Dockerised deployment.</p>
+          <div class="tech-pills"><span>RAG</span><span>FastAPI</span><span>Streamlit</span><span>Docker</span></div>
+        </div>
+        <div class="proj-card fade-up" style="--delay: 0.08s">
+          <div class="proj-card-top">
+            <div class="proj-icon proj-icon--sm"><i class="fas fa-chart-line"></i></div>
+            <div class="proj-links">
+              <a href="https://github.com/SharpKushagra/deribit" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <h3>Deribit Trading System</h3>
+          <p>High-performance C++ system connecting to Deribit exchange via REST and WebSocket — real-time order streaming and low-latency optimisation.</p>
+          <div class="tech-pills"><span>C++</span><span>WebSocket</span><span>REST API</span></div>
+        </div>
+        <div class="proj-card fade-up" style="--delay: 0.16s">
+          <div class="proj-card-top">
+            <div class="proj-icon proj-icon--sm"><i class="fas fa-briefcase"></i></div>
+            <div class="proj-links">
+              <a href="https://github.com/SharpKushagra/SkillMatchApp" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <h3>SkillMatch App</h3>
+          <p>Django &amp; SQLite web app connecting users to jobs and courses with RESTful APIs and dynamic skill-matching algorithms.</p>
+          <div class="tech-pills"><span>Django</span><span>SQLite</span><span>REST API</span></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- ═══ CERTIFICATIONS ═══ -->
+  <section class="section certs">
+    <div class="container">
+      <div class="section-tag fade-up">
+        <span class="tag-line"></span>
+        <span>05. Certifications</span>
+      </div>
+      <div class="certs-grid fade-up">
+        <div class="cert-card">
+          <i class="fab fa-python cert-icon"></i>
+          <div><h4>Python 101</h4><p>IBM</p></div>
+        </div>
+        <div class="cert-card">
+          <i class="fas fa-database cert-icon"></i>
+          <div><h4>Data Science Tools</h4><p>IBM</p></div>
+        </div>
+        <div class="cert-card">
+          <i class="fas fa-cloud cert-icon"></i>
+          <div><h4>Cloud Computing Essentials</h4><p>IBM</p></div>
+        </div>
+        <div class="cert-card">
+          <i class="fas fa-chart-bar cert-icon"></i>
+          <div><h4>Big Data</h4><p>IBM</p></div>
+        </div>
+        <div class="cert-card">
+          <i class="fab fa-python cert-icon"></i>
+          <div><h4>Python Certification</h4><p>GUVI</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CONTACT ═══ -->
+  <section id="contact" class="section contact">
+    <div class="container contact-inner fade-up">
+      <p class="contact-pre">06. What's Next?</p>
+      <h2 class="contact-title">Get In <span class="accent-text">Touch</span></h2>
+      <p class="contact-desc">Open to SDE roles, freelance projects, and interesting collaborations. Whether you have a question, an opportunity, or just want to say hi — my inbox is always open.</p>
+      <div class="contact-actions">
+        <a href="https://www.linkedin.com/in/kushagra-saxena-8698a0343/" target="_blank" class="btn btn--primary">
+          <i class="fab fa-linkedin-in"></i> Connect on LinkedIn
+        </a>
+        <a href="https://github.com/SharpKushagra" target="_blank" class="btn btn--ghost">
+          <i class="fab fa-github"></i> GitHub Profile
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
   <footer class="footer">
-    <div class="footer-container">
-      <span class="footer-logo">KS<span class="dot">.</span></span>
-      <nav class="footer-nav">
-        <a href="#about">About</a>
-        <a href="#experience">Work</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-      </nav>
-      <span class="footer-copy">&copy; 2026 Kushagra Saxena</span>
+    <div class="container footer-inner">
+      <p class="footer-copy">Designed &amp; Built by <span class="accent-text">Kushagra Saxena</span></p>
+      <div class="footer-socials">
+        <a href="https://github.com/SharpKushagra" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/kushagra-saxena-8698a0343/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://leetcode.com/u/KushagraSaxena/" target="_blank"><i class="fas fa-code"></i></a>
+      </div>
+      <p class="footer-year">&copy; 2026</p>
     </div>
   </footer>
 
