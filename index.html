@@ -3,340 +3,473 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kushagra Saxena | Portfolio</title>
+  <title>Kushagra Saxena | SDE 1 at PanScience Innovations</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
+
   <!-- Navigation -->
-  <nav class="navbar">
-    <div class="container">
-      <div class="nav-brand">KS</div>
-      <ul class="nav-links">
+  <nav class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#home" class="nav-brand">
+        <span class="brand-bracket">&lt;</span>KS<span class="brand-bracket">/&gt;</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#certifications">Certifications</a></li>
+        <li><a href="https://www.linkedin.com/in/kushagra-saxena-8698a0343/" target="_blank" class="nav-cta">Hire Me</a></li>
       </ul>
-      <div class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <section id="home" class="hero">
-    <div class="hero-background">
-      <div class="gradient-orb orb-1"></div>
-      <div class="gradient-orb orb-2"></div>
-      <div class="gradient-orb orb-3"></div>
-    </div>
-    <div class="container">
-      <div class="hero-content">
-        <div class="profile-image-wrapper">
-          <div class="profile-glow"></div>
+    <div class="hero-grid-bg"></div>
+    <div class="hero-glow-1"></div>
+    <div class="hero-glow-2"></div>
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          Available for opportunities
+        </div>
+        <h1 class="hero-name">Kushagra<br><span class="hero-name-accent">Saxena</span></h1>
+        <div class="hero-role">
+          <span class="role-prefix">// </span>
+          <span class="typed-text" id="typedText"></span><span class="cursor">|</span>
+        </div>
+        <p class="hero-desc">Software Development Engineer at <strong>PanScience Innovations</strong> — building scalable communication platforms, AI-powered products, and enterprise CRM systems.</p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn-primary">
+            <i class="fas fa-rocket"></i> View My Work
+          </a>
+          <a href="https://github.com/SharpKushagra" target="_blank" class="btn-secondary">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+        </div>
+        <div class="hero-socials">
+          <a href="https://www.linkedin.com/in/kushagra-saxena-8698a0343/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/SharpKushagra" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://leetcode.com/u/KushagraSaxena/" target="_blank" title="LeetCode"><i class="fas fa-code"></i></a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="profile-ring ring-outer"></div>
+        <div class="profile-ring ring-inner"></div>
+        <div class="profile-frame">
           <img src="profile.jpg" alt="Kushagra Saxena" class="profile-img">
         </div>
-        <h1 class="hero-title">
-          <span class="gradient-text">Kushagra Saxena</span>
-        </h1>
-        <p class="hero-subtitle">B.Tech Computer Science | AI & LLM Expert | Data Science Specialist | Robotics Enthusiast</p>
-        <p class="hero-description">Building AI-driven solutions and exploring the intersection of data science, robotics, and software engineering</p>
-        <div class="social-links">
-          <a href="https://www.linkedin.com/in/kushagra-saxena-8698a0343/" target="_blank" class="social-link" aria-label="LinkedIn">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-          <a href="https://github.com/SharpKushagra" target="_blank" class="social-link" aria-label="GitHub">
-            <i class="fab fa-github"></i>
-          </a>
-          <a href="https://leetcode.com/u/KushagraSaxena/" target="_blank" class="social-link" aria-label="LeetCode">
-            <i class="fas fa-code"></i>
-          </a>
+        <div class="float-badge badge-top">
+          <i class="fas fa-layer-group"></i> SDE 1
         </div>
-        <a href="#about" class="cta-button">
-          <span>Explore My Work</span>
-          <i class="fas fa-arrow-down"></i>
-        </a>
+        <div class="float-badge badge-bottom">
+          <i class="fas fa-building"></i> PanScience
+        </div>
+        <div class="float-badge badge-left">
+          <i class="fab fa-aws"></i> AWS
+        </div>
+        <div class="float-badge badge-right">
+          <i class="fas fa-brain"></i> AI/ML
+        </div>
       </div>
     </div>
-    <div class="scroll-indicator">
-      <div class="mouse"></div>
-    </div>
+    <a href="#about" class="scroll-cue">
+      <span>scroll</span>
+      <div class="scroll-line"></div>
+    </a>
   </section>
 
-  <!-- About Section -->
+  <!-- About -->
   <section id="about" class="about">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">About Me</span>
+        <span class="section-label">01 / about</span>
         <h2 class="section-title">Who I Am</h2>
       </div>
-      <div class="about-content">
+      <div class="about-grid">
         <div class="about-text">
-          <p>Hello! I'm <strong>Kushagra Saxena</strong>, a passionate and driven B.Tech student in Computer Science with a specialization in Data Science, and a minor in Robotics at <strong>Shri Ramswaroop Memorial College of Engineering and Management, Lucknow</strong>.</p>
-          <p>My academic journey blends my love for data-driven solutions and cutting-edge robotic technologies, enabling me to explore innovative intersections of AI, data analytics, and automation. Alongside, my hands-on experiences in coding and problem-solving have honed my technical skills in Python, Java, and full stack web development.</p>
-          <p>I'm currently working as an <strong>LLM Intern at PanScience Innovations</strong>, where I'm building and optimizing AI-driven solutions using Large Language Models, contributing to backend development, prompt engineering, and experimentation with generative AI workflows.</p>
+          <p>I'm a <strong>Software Development Engineer (SDE 1)</strong> at <strong>PanScience Innovations</strong>, Lucknow — currently building scalable backend systems, real-time communication platforms, and AI-integrated products used by enterprise clients.</p>
+          <p>I'm pursuing my B.Tech in Computer Science with a specialization in Data Science and a minor in Robotics at <strong>Shri Ramswaroop Memorial College of Engineering and Management</strong>. My foundation spans full-stack development, cloud infrastructure, real-time protocols, and applied AI.</p>
+          <p>At PSI I've shipped production systems including an internal communication platform (Own360), portfolio products, and enterprise CRM solutions for clients like <strong>S Chand</strong> and <strong>Dish TV</strong> — all within a tight, high-velocity engineering team.</p>
+        </div>
+        <div class="about-stats">
+          <div class="stat-card">
+            <div class="stat-number">5<span class="stat-plus">+</span></div>
+            <div class="stat-label">Projects Delivered at PSI</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">2</div>
+            <div class="stat-label">Enterprise CRM Clients</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">1</div>
+            <div class="stat-label">Internal Platform Built</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">6<span class="stat-plus">mo</span></div>
+            <div class="stat-label">At PanScience Innovations</div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Experience Section -->
+  <!-- Experience -->
   <section id="experience" class="experience">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Experience</span>
+        <span class="section-label">02 / experience</span>
         <h2 class="section-title">My Journey</h2>
       </div>
       <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <div class="timeline-date">December 2025 - Present</div>
-            <h3 class="timeline-title">LLM Intern</h3>
-            <h4 class="timeline-company">PanScience Innovations (PSI)</h4>
-            <p class="timeline-location"><i class="fas fa-map-marker-alt"></i> Lucknow, Uttar Pradesh, India</p>
-            <p class="timeline-description">Joined PanScience Innovations LLP as an LLM Intern, working on building and optimizing AI-driven solutions using Large Language Models. Contributing to backend development, prompt engineering, and experimentation with generative AI workflows to solve real-world problems. Gaining hands-on exposure to applied AI, scalable systems, and industry-grade development practices.</p>
-            <div class="timeline-tags">
-              <span class="tag">LLM</span>
-              <span class="tag">AI</span>
-              <span class="tag">Backend Development</span>
-              <span class="tag">Prompt Engineering</span>
-              <span class="tag">Generative AI</span>
+
+        <!-- Current Role -->
+        <div class="timeline-item current">
+          <div class="tl-marker">
+            <div class="tl-dot active"></div>
+          </div>
+          <div class="tl-card">
+            <div class="tl-card-header">
+              <div>
+                <span class="tl-badge current-badge">Current</span>
+                <h3 class="tl-title">Software Development Engineer I (SDE 1)</h3>
+                <h4 class="tl-company"><i class="fas fa-building"></i> PanScience Innovations (PSI)</h4>
+                <p class="tl-location"><i class="fas fa-map-marker-alt"></i> Lucknow, Uttar Pradesh, India</p>
+              </div>
+              <div class="tl-date-block">
+                <span class="tl-date">May 2026 – Present</span>
+              </div>
+            </div>
+            <p class="tl-desc">Promoted from LLM Intern to SDE 1. Leading development of real-time communication infrastructure, delivering client CRM solutions, and building AI-powered web platforms. Owning end-to-end delivery of production features across cloud, backend, and real-time systems.</p>
+            <div class="tl-tags">
+              <span>WebSocket</span><span>WebRTC</span><span>FastAPI</span><span>AWS</span><span>Docker</span><span>Kafka</span><span>REST APIs</span>
             </div>
           </div>
         </div>
+
+        <!-- LLM Intern -->
         <div class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <div class="timeline-date">September 2025 - January 2026</div>
-            <h3 class="timeline-title">Software Engineering Intern</h3>
-            <h4 class="timeline-company">Setukrite Technologies</h4>
-            <p class="timeline-location"><i class="fas fa-map-marker-alt"></i> Lucknow, Uttar Pradesh, India</p>
-            <p class="timeline-description">Built an AI-powered website for analyzing health reports along with system design and dynamic database setup. Worked on full-stack development, integrating AI capabilities for medical data analysis.</p>
-            <div class="timeline-tags">
-              <span class="tag">AI</span>
-              <span class="tag">System Design</span>
-              <span class="tag">Database</span>
-              <span class="tag">Full Stack</span>
+          <div class="tl-marker">
+            <div class="tl-dot"></div>
+          </div>
+          <div class="tl-card">
+            <div class="tl-card-header">
+              <div>
+                <h3 class="tl-title">LLM Intern</h3>
+                <h4 class="tl-company"><i class="fas fa-building"></i> PanScience Innovations (PSI)</h4>
+                <p class="tl-location"><i class="fas fa-map-marker-alt"></i> Lucknow, Uttar Pradesh, India</p>
+              </div>
+              <div class="tl-date-block">
+                <span class="tl-date">Dec 2025 – May 2026</span>
+              </div>
+            </div>
+            <p class="tl-desc">Joined PSI as an LLM Intern — built and optimized AI-driven solutions using Large Language Models. Contributed to backend development, prompt engineering, MCP integrations, and generative AI workflows for real-world product development. Rapidly expanded scope to full-stack and cloud infrastructure.</p>
+            <div class="tl-tags">
+              <span>LLM</span><span>RAG</span><span>Prompt Engineering</span><span>MCP</span><span>Python</span><span>Generative AI</span>
             </div>
           </div>
         </div>
+
+        <!-- Setukrite -->
+        <div class="timeline-item">
+          <div class="tl-marker">
+            <div class="tl-dot"></div>
+          </div>
+          <div class="tl-card">
+            <div class="tl-card-header">
+              <div>
+                <h3 class="tl-title">Software Engineering Intern</h3>
+                <h4 class="tl-company"><i class="fas fa-building"></i> Setukrite Technologies</h4>
+                <p class="tl-location"><i class="fas fa-map-marker-alt"></i> Lucknow, Uttar Pradesh, India</p>
+              </div>
+              <div class="tl-date-block">
+                <span class="tl-date">Sep 2025 – Jan 2026</span>
+              </div>
+            </div>
+            <p class="tl-desc">Built an AI-powered web application for analyzing health reports. Handled full-stack development, system design, dynamic database setup, and integration of AI capabilities for medical data analysis.</p>
+            <div class="tl-tags">
+              <span>AI</span><span>System Design</span><span>Database</span><span>Full Stack</span>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Skills Section -->
+  <!-- Skills -->
   <section id="skills" class="skills">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Skills</span>
+        <span class="section-label">03 / skills</span>
         <h2 class="section-title">Technologies I Work With</h2>
       </div>
-      <div class="skills-grid">
-        <div class="skill-card">
-          <div class="skill-icon"><i class="fas fa-brain"></i></div>
-          <h3>LLM</h3>
+
+      <div class="skills-categories">
+
+        <div class="skill-category">
+          <h3 class="cat-title"><i class="fab fa-aws"></i> Cloud &amp; DevOps</h3>
+          <div class="skill-pills">
+            <span class="pill"><i class="fab fa-aws"></i> AWS</span>
+            <span class="pill">AWS S3</span>
+            <span class="pill">AWS IAM</span>
+            <span class="pill"><i class="fab fa-docker"></i> Docker</span>
+            <span class="pill">Kafka</span>
+            <span class="pill">SMTP</span>
+          </div>
         </div>
-        <div class="skill-card">
-          <div class="skill-icon"><i class="fas fa-search-plus"></i></div>
-          <h3>RAG</h3>
+
+        <div class="skill-category">
+          <h3 class="cat-title"><i class="fas fa-server"></i> Backend &amp; APIs</h3>
+          <div class="skill-pills">
+            <span class="pill">FastAPI</span>
+            <span class="pill">REST APIs</span>
+            <span class="pill">WebSocket</span>
+            <span class="pill">WebRTC</span>
+            <span class="pill">MCP</span>
+            <span class="pill">APIs</span>
+            <span class="pill">Django</span>
+            <span class="pill">Spring Boot</span>
+          </div>
         </div>
-        <div class="skill-card">
-          <div class="skill-icon"><i class="fab fa-python"></i></div>
-          <h3>Python</h3>
+
+        <div class="skill-category">
+          <h3 class="cat-title"><i class="fas fa-brain"></i> AI &amp; Machine Learning</h3>
+          <div class="skill-pills">
+            <span class="pill">LLM</span>
+            <span class="pill">RAG</span>
+            <span class="pill">Prompt Engineering</span>
+            <span class="pill">Generative AI</span>
+            <span class="pill">AI Agents</span>
+            <span class="pill">NLP</span>
+          </div>
         </div>
-        <div class="skill-card">
-          <div class="skill-icon"><i class="fab fa-java"></i></div>
-          <h3>Java</h3>
+
+        <div class="skill-category">
+          <h3 class="cat-title"><i class="fas fa-code"></i> Languages</h3>
+          <div class="skill-pills">
+            <span class="pill"><i class="fab fa-python"></i> Python</span>
+            <span class="pill"><i class="fab fa-java"></i> Java</span>
+            <span class="pill">C++</span>
+            <span class="pill"><i class="fab fa-js"></i> JavaScript</span>
+          </div>
         </div>
-        <div class="skill-card">
-          <div class="skill-icon"><i class="fas fa-database"></i></div>
-          <h3>Data Science Tools</h3>
+
+        <div class="skill-category">
+          <h3 class="cat-title"><i class="fas fa-layer-group"></i> Frontend &amp; Tools</h3>
+          <div class="skill-pills">
+            <span class="pill"><i class="fab fa-react"></i> React JS</span>
+            <span class="pill">System Design</span>
+            <span class="pill">Computer Networks</span>
+            <span class="pill">Big Data</span>
+            <span class="pill">Data Science</span>
+            <span class="pill">Git</span>
+          </div>
         </div>
-        <div class="skill-card">
-          <div class="skill-icon"><i class="fas fa-cloud"></i></div>
-          <h3>Cloud Computing</h3>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon"><i class="fas fa-chart-line"></i></div>
-          <h3>Big Data</h3>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon"><i class="fab fa-python"></i></div>
-          <h3>Django</h3>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon"><i class="fas fa-leaf"></i></div>
-          <h3>Spring Boot</h3>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon"><i class="fab fa-react"></i></div>
-          <h3>React JS</h3>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon"><i class="fas fa-code"></i></div>
-          <h3>C++</h3>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon"><i class="fas fa-plug"></i></div>
-          <h3>WebSocket++</h3>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon"><i class="fas fa-link"></i></div>
-          <h3>API Integration</h3>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon"><i class="fas fa-sitemap"></i></div>
-          <h3>System Design</h3>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon"><i class="fas fa-tasks"></i></div>
-          <h3>Project Management</h3>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon"><i class="fas fa-network-wired"></i></div>
-          <h3>Computer Networks</h3>
-        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Projects Section -->
+  <!-- Projects -->
   <section id="projects" class="projects">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Projects</span>
+        <span class="section-label">04 / projects</span>
         <h2 class="section-title">Featured Work</h2>
       </div>
-      <div class="projects-grid">
-        <div class="project-card">
-          <div class="project-icon"><i class="fas fa-comments"></i></div>
-          <h3>Advanced ChatBot (RAG-based)</h3>
-          <p>A Retrieval-Augmented Generation (RAG) assistant with FastAPI backend and Streamlit frontend. Features vectorstore ingestion, document querying, Dockerized setup, and comprehensive testing with pytest.</p>
-          <div class="project-tech">
-            <span>RAG</span>
-            <span>FastAPI</span>
-            <span>Streamlit</span>
-            <span>Docker</span>
-            <span>Python</span>
+
+      <div class="projects-group">
+        <h3 class="group-label"><i class="fas fa-building"></i> PanScience Innovations — Delivered Projects</h3>
+        <div class="projects-grid">
+
+          <div class="project-card featured">
+            <div class="project-card-top">
+              <span class="project-tag">Internal Platform</span>
+              <div class="project-icon-wrap"><i class="fas fa-satellite-dish"></i></div>
+            </div>
+            <h3>Own360</h3>
+            <p>A full-featured real-time communication platform for the entire firm — built from scratch at PSI. Includes live messaging, video conferencing, presence indicators, and room management powered by WebSocket and WebRTC.</p>
+            <div class="project-tech-pills">
+              <span>WebSocket</span><span>WebRTC</span><span>FastAPI</span><span>Python</span><span>Docker</span>
+            </div>
           </div>
-          <a href="https://github.com/SharpKushagra/Advanced-ChatBot" target="_blank" class="project-link">
-            <span>View Project</span>
-            <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
-        <div class="project-card">
-          <div class="project-icon"><i class="fas fa-robot"></i></div>
-          <h3>AI Chatbot</h3>
-          <p>An AI chatbot that communicates autonomously using OpenAI API, Python libraries like pyautogui, showcasing dynamic conversation handling.</p>
-          <div class="project-tech">
-            <span>Python</span>
-            <span>OpenAI API</span>
-            <span>AI</span>
+
+          <div class="project-card featured">
+            <div class="project-card-top">
+              <span class="project-tag">Client Project</span>
+              <div class="project-icon-wrap"><i class="fas fa-book-open"></i></div>
+            </div>
+            <h3>Granth AI — S Chand</h3>
+            <p>AI-powered educational platform built for S Chand, one of India's largest publishing houses. Leverages LLMs for intelligent content delivery, Q&amp;A, and personalized learning experiences on academic material.</p>
+            <div class="project-tech-pills">
+              <span>LLM</span><span>RAG</span><span>FastAPI</span><span>AWS</span><span>Python</span>
+            </div>
           </div>
-          <a href="https://github.com/SharpKushagra/AI_chatbot" target="_blank" class="project-link">
-            <span>View Project</span>
-            <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
-        <div class="project-card">
-          <div class="project-icon"><i class="fas fa-microphone"></i></div>
-          <h3>Jarvis (AI Voice Assistant)</h3>
-          <p>A Python-based voice assistant inspired by Iron Man, using libraries like speechrecognition, webbrowser, and pyttsx3 to automate daily tasks.</p>
-          <div class="project-tech">
-            <span>Python</span>
-            <span>Speech Recognition</span>
-            <span>Automation</span>
+
+          <div class="project-card featured">
+            <div class="project-card-top">
+              <span class="project-tag">Client Project</span>
+              <div class="project-icon-wrap"><i class="fas fa-users-cog"></i></div>
+            </div>
+            <h3>S Chand CRM</h3>
+            <p>Enterprise CRM system delivered for S Chand. Streamlines sales pipeline, customer data management, and internal coordination with real-time dashboards and API integrations.</p>
+            <div class="project-tech-pills">
+              <span>REST APIs</span><span>Django</span><span>AWS</span><span>Kafka</span><span>Docker</span>
+            </div>
           </div>
-          <a href="https://github.com/SharpKushagra/AI_Projects" target="_blank" class="project-link">
-            <span>View Project</span>
-            <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
-        <div class="project-card">
-          <div class="project-icon"><i class="fas fa-briefcase"></i></div>
-          <h3>SkillMatch App</h3>
-          <p>A Django and SQLite powered web app connecting users to relevant jobs and courses with RESTful APIs and dynamic skill-matching algorithms.</p>
-          <div class="project-tech">
-            <span>Django</span>
-            <span>SQLite</span>
-            <span>REST API</span>
+
+          <div class="project-card featured">
+            <div class="project-card-top">
+              <span class="project-tag">Client Project</span>
+              <div class="project-icon-wrap"><i class="fas fa-tv"></i></div>
+            </div>
+            <h3>Dish TV CRM</h3>
+            <p>Custom CRM solution for Dish TV — managing subscriber lifecycle, support ticketing, and field agent workflows. Designed for scale with event-driven messaging and AWS-backed infrastructure.</p>
+            <div class="project-tech-pills">
+              <span>REST APIs</span><span>AWS S3</span><span>AWS IAM</span><span>Kafka</span><span>FastAPI</span>
+            </div>
           </div>
-          <a href="https://github.com/SharpKushagra/SkillMatchApp" target="_blank" class="project-link">
-            <span>View Project</span>
-            <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
-        <div class="project-card">
-          <div class="project-icon"><i class="fas fa-chart-line"></i></div>
-          <h3>Deribit Trading System</h3>
-          <p>High-performance C++ system interacting with Deribit exchange via REST and WebSocket APIs, featuring real-time streaming, secure transactions, and system optimization.</p>
-          <div class="project-tech">
-            <span>C++</span>
-            <span>WebSocket</span>
-            <span>REST API</span>
+
+          <div class="project-card">
+            <div class="project-card-top">
+              <span class="project-tag">Portfolio Product</span>
+              <div class="project-icon-wrap"><i class="fas fa-globe"></i></div>
+            </div>
+            <h3>flexibench.io</h3>
+            <p>A professional portfolio website product built at PSI — fully responsive, performance-optimised, and designed to represent professionals and businesses with a clean, modern aesthetic.</p>
+            <div class="project-tech-pills">
+              <span>React JS</span><span>REST APIs</span><span>AWS S3</span><span>SMTP</span>
+            </div>
+            <a href="https://flexibench.io" target="_blank" class="project-link">
+              Visit Site <i class="fas fa-arrow-up-right-from-square"></i>
+            </a>
           </div>
-          <a href="https://github.com/SharpKushagra/deribit" target="_blank" class="project-link">
-            <span>View Project</span>
-            <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
-        <div class="project-card">
-          <div class="project-icon"><i class="fas fa-tools"></i></div>
-          <h3>Legacy Code Optimizer</h3>
-          <p>Spring Boot-based analyzer to optimize Java codebases through static code analysis, metrics extraction, and technical debt estimation.</p>
-          <div class="project-tech">
-            <span>Spring Boot</span>
-            <span>Java</span>
-            <span>Code Analysis</span>
+
+          <div class="project-card">
+            <div class="project-card-top">
+              <span class="project-tag">Portfolio Product</span>
+              <div class="project-icon-wrap"><i class="fas fa-robot"></i></div>
+            </div>
+            <h3>Botza.panscience.ai</h3>
+            <p>AI-powered conversational platform built for PanScience — showcasing intelligent bot capabilities and serving as an interactive product demonstration for client engagements.</p>
+            <div class="project-tech-pills">
+              <span>LLM</span><span>FastAPI</span><span>WebSocket</span><span>MCP</span><span>AWS</span>
+            </div>
+            <a href="https://botza.panscience.ai" target="_blank" class="project-link">
+              Visit Site <i class="fas fa-arrow-up-right-from-square"></i>
+            </a>
           </div>
-          <a href="https://github.com/SharpKushagra/legacy-optimzer-" target="_blank" class="project-link">
-            <span>View Project</span>
-            <i class="fas fa-arrow-right"></i>
-          </a>
+
         </div>
       </div>
+
+      <div class="projects-group">
+        <h3 class="group-label"><i class="fab fa-github"></i> Personal &amp; Open Source Projects</h3>
+        <div class="projects-grid personal-grid">
+
+          <div class="project-card">
+            <div class="project-card-top">
+              <span class="project-tag">AI</span>
+              <div class="project-icon-wrap"><i class="fas fa-comments"></i></div>
+            </div>
+            <h3>Advanced ChatBot (RAG)</h3>
+            <p>A Retrieval-Augmented Generation assistant with FastAPI backend, Streamlit frontend, vectorstore ingestion, and Dockerised deployment with pytest coverage.</p>
+            <div class="project-tech-pills">
+              <span>RAG</span><span>FastAPI</span><span>Streamlit</span><span>Docker</span>
+            </div>
+            <a href="https://github.com/SharpKushagra/Advanced-ChatBot" target="_blank" class="project-link">
+              GitHub <i class="fab fa-github"></i>
+            </a>
+          </div>
+
+          <div class="project-card">
+            <div class="project-card-top">
+              <span class="project-tag">C++</span>
+              <div class="project-icon-wrap"><i class="fas fa-chart-line"></i></div>
+            </div>
+            <h3>Deribit Trading System</h3>
+            <p>High-performance C++ system connecting to Deribit exchange via REST and WebSocket APIs — real-time order streaming, secure transaction handling, and low-latency optimisation.</p>
+            <div class="project-tech-pills">
+              <span>C++</span><span>WebSocket</span><span>REST API</span>
+            </div>
+            <a href="https://github.com/SharpKushagra/deribit" target="_blank" class="project-link">
+              GitHub <i class="fab fa-github"></i>
+            </a>
+          </div>
+
+          <div class="project-card">
+            <div class="project-card-top">
+              <span class="project-tag">Full Stack</span>
+              <div class="project-icon-wrap"><i class="fas fa-briefcase"></i></div>
+            </div>
+            <h3>SkillMatch App</h3>
+            <p>Django &amp; SQLite powered web app connecting users to jobs and courses with RESTful APIs and dynamic skill-matching algorithms.</p>
+            <div class="project-tech-pills">
+              <span>Django</span><span>SQLite</span><span>REST API</span>
+            </div>
+            <a href="https://github.com/SharpKushagra/SkillMatchApp" target="_blank" class="project-link">
+              GitHub <i class="fab fa-github"></i>
+            </a>
+          </div>
+
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- Certifications Section -->
+  <!-- Certifications -->
   <section id="certifications" class="certifications">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Certifications</span>
-        <h2 class="section-title">Learning & Achievements</h2>
+        <span class="section-label">05 / certifications</span>
+        <h2 class="section-title">Learning &amp; Achievements</h2>
       </div>
-      <div class="certifications-grid">
+      <div class="certs-grid">
         <div class="cert-card">
-          <div class="cert-icon"><i class="fab fa-python"></i></div>
-          <h3>IBM Python 101</h3>
-          <p>IBM</p>
+          <div class="cert-logo"><i class="fab fa-python"></i></div>
+          <div class="cert-info">
+            <h4>Python 101</h4>
+            <p>IBM</p>
+          </div>
         </div>
         <div class="cert-card">
-          <div class="cert-icon"><i class="fas fa-database"></i></div>
-          <h3>IBM Data Science Tools</h3>
-          <p>IBM</p>
+          <div class="cert-logo"><i class="fas fa-database"></i></div>
+          <div class="cert-info">
+            <h4>Data Science Tools</h4>
+            <p>IBM</p>
+          </div>
         </div>
         <div class="cert-card">
-          <div class="cert-icon"><i class="fas fa-cloud"></i></div>
-          <h3>IBM Cloud Computing Essentials</h3>
-          <p>IBM</p>
+          <div class="cert-logo"><i class="fas fa-cloud"></i></div>
+          <div class="cert-info">
+            <h4>Cloud Computing Essentials</h4>
+            <p>IBM</p>
+          </div>
         </div>
         <div class="cert-card">
-          <div class="cert-icon"><i class="fas fa-chart-bar"></i></div>
-          <h3>IBM Big Data</h3>
-          <p>IBM</p>
+          <div class="cert-logo"><i class="fas fa-chart-bar"></i></div>
+          <div class="cert-info">
+            <h4>Big Data</h4>
+            <p>IBM</p>
+          </div>
         </div>
         <div class="cert-card">
-          <div class="cert-icon"><i class="fab fa-python"></i></div>
-          <h3>Python by GUVI</h3>
-          <p>GUVI</p>
+          <div class="cert-logo"><i class="fab fa-python"></i></div>
+          <div class="cert-info">
+            <h4>Python Certification</h4>
+            <p>GUVI</p>
+          </div>
         </div>
       </div>
     </div>
@@ -344,21 +477,31 @@
 
   <!-- Footer -->
   <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-brand">
-          <h3>Kushagra Saxena</h3>
-          <p>Building the future with AI, Data Science & Robotics</p>
-        </div>
-        <div class="footer-links">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <a href="#home" class="nav-brand footer-brand">
+          <span class="brand-bracket">&lt;</span>KS<span class="brand-bracket">/&gt;</span>
+        </a>
+        <p>SDE 1 · PanScience Innovations · Lucknow, India</p>
+      </div>
+      <div class="footer-center">
+        <ul class="footer-nav">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+        </ul>
+      </div>
+      <div class="footer-right">
+        <div class="footer-socials">
           <a href="https://www.linkedin.com/in/kushagra-saxena-8698a0343/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
           <a href="https://github.com/SharpKushagra" target="_blank"><i class="fab fa-github"></i></a>
           <a href="https://leetcode.com/u/KushagraSaxena/" target="_blank"><i class="fas fa-code"></i></a>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2025 Kushagra Saxena. All rights reserved.</p>
-      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Kushagra Saxena. All rights reserved.</p>
     </div>
   </footer>
 
