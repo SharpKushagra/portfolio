@@ -119,8 +119,8 @@ document.querySelectorAll('.proj-card').forEach(card => {
 });
 
 /* ── Typing role text in hero ─────────────────── */
-const heroRole = document.querySelector('.hero-role');
-if (heroRole) {
+const typedSpan = document.querySelector('.hero-role-text');
+if (typedSpan) {
   const roles = [
     'SDE 1 · PanScience Innovations',
     'Backend Engineer · AWS & Python',
@@ -128,14 +128,11 @@ if (heroRole) {
     'AI Builder · LLM & RAG',
   ];
   let ri = 0, ci = 0, deleting = false;
-  const staticSpan = heroRole.querySelector('.role-line');
-  let textNode = document.createTextNode(roles[0]);
-  heroRole.appendChild(textNode);
 
   function typeLoop() {
     const current = roles[ri];
     if (!deleting) {
-      textNode.textContent = current.slice(0, ci + 1);
+      typedSpan.textContent = current.slice(0, ci + 1);
       ci++;
       if (ci === current.length) {
         deleting = true;
@@ -143,7 +140,7 @@ if (heroRole) {
         return;
       }
     } else {
-      textNode.textContent = current.slice(0, ci - 1);
+      typedSpan.textContent = current.slice(0, ci - 1);
       ci--;
       if (ci === 0) {
         deleting = false;
