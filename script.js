@@ -1,16 +1,9 @@
 /* ═══════════════════════════════════════════════════
    Portfolio — Kushagra Saxena
-   AIML Engineer at Eastern Book Company (EBC)
+   Editorial Minimalist Presentation Logic
    ═══════════════════════════════════════════════════ */
 
-/* ── Spotlight effect ─────────────────────────── */
-const spotlight = document.getElementById('spotlight');
-if (spotlight) {
-  document.addEventListener('mousemove', e => {
-    spotlight.style.setProperty('--x', e.clientX + 'px');
-    spotlight.style.setProperty('--y', e.clientY + 'px');
-  }, { passive: true });
-}
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /* ── Navbar & Mobile Drawer ───────────────────── */
 const header    = document.getElementById('header');
@@ -19,7 +12,7 @@ const navMenu   = document.getElementById('navMenu');
 
 window.addEventListener('scroll', () => {
   if (header) {
-    header.classList.toggle('scrolled', window.scrollY > 40);
+    header.classList.toggle('scrolled', window.scrollY > 30);
   }
   updateActiveLink();
 }, { passive: true });
@@ -55,7 +48,7 @@ function updateActiveLink() {
   });
 }
 
-/* ── Smooth scroll ────────────────────────────── */
+/* ── Smooth scroll between sections ──────────── */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
     const targetId = a.getAttribute('href');
@@ -63,11 +56,11 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     const target = document.querySelector(targetId);
     if (!target) return;
     e.preventDefault();
-    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    target.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' });
   });
 });
 
-/* ── Scroll reveal ────────────────────────────── */
+/* ── Soft fade-and-rise reveals ───────────────── */
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -82,14 +75,21 @@ const revealObserver = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.fade-up').forEach(el => revealObserver.observe(el));
 
-/* ── Stats counter ────────────────────────────── */
+/* ── Metric stats counter ─────────────────────── */
 const counterObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (!entry.isIntersecting) return;
     const el     = entry.target;
     const target = parseInt(el.dataset.target, 10);
-    const dur    = 1300;
-    const start  = performance.now();
+
+    if (prefersReducedMotion) {
+      el.textContent = target;
+      counterObserver.unobserve(el);
+      return;
+    }
+
+    const dur   = 1200;
+    const start = performance.now();
 
     function tick(now) {
       const p  = Math.min((now - start) / dur, 1);
@@ -114,34 +114,39 @@ if (typedSpan) {
     'High-Throughput Systems · SDE',
     'Former SDE 1 · PanScience Innovations'
   ];
-  let ri = 0, ci = 0, deleting = false;
 
-  function typeLoop() {
-    const current = roles[ri];
-    if (!deleting) {
-      typedSpan.textContent = current.slice(0, ci + 1);
-      ci++;
-      if (ci === current.length) {
-        deleting = true;
-        setTimeout(typeLoop, 2200);
-        return;
+  if (prefersReducedMotion) {
+    typedSpan.textContent = roles[0];
+  } else {
+    let ri = 0, ci = 0, deleting = false;
+
+    function typeLoop() {
+      const current = roles[ri];
+      if (!deleting) {
+        typedSpan.textContent = current.slice(0, ci + 1);
+        ci++;
+        if (ci === current.length) {
+          deleting = true;
+          setTimeout(typeLoop, 2200);
+          return;
+        }
+      } else {
+        typedSpan.textContent = current.slice(0, ci - 1);
+        ci--;
+        if (ci === 0) {
+          deleting = false;
+          ri = (ri + 1) % roles.length;
+        }
       }
-    } else {
-      typedSpan.textContent = current.slice(0, ci - 1);
-      ci--;
-      if (ci === 0) {
-        deleting = false;
-        ri = (ri + 1) % roles.length;
-      }
+      setTimeout(typeLoop, deleting ? 30 : 65);
     }
-    setTimeout(typeLoop, deleting ? 30 : 65);
-  }
 
-  setTimeout(typeLoop, 1000);
+    setTimeout(typeLoop, 900);
+  }
 }
 
 /* ── Project Filter Tabs ──────────────────────── */
-const filterBtns = document.querySelectorAll('.filter-btn');
+const filterBtns   = document.querySelectorAll('.filter-btn');
 const projectCards = document.querySelectorAll('.proj-card');
 
 filterBtns.forEach(btn => {
@@ -155,31 +160,18 @@ filterBtns.forEach(btn => {
       const categories = card.dataset.category || '';
       if (filter === 'all' || categories.split(' ').includes(filter)) {
         card.style.display = 'flex';
-        setTimeout(() => {
+        requestAnimationFrame(() => {
           card.style.opacity = '1';
           card.style.transform = '';
-        }, 30);
+        });
       } else {
         card.style.opacity = '0';
-        card.style.transform = 'scale(0.96)';
+        card.style.transform = 'scale(0.98)';
         setTimeout(() => {
           card.style.display = 'none';
         }, 200);
       }
     });
-  });
-});
-
-/* ── Project card subtle tilt ─────────────────── */
-document.querySelectorAll('.proj-card').forEach(card => {
-  card.addEventListener('mousemove', e => {
-    const r  = card.getBoundingClientRect();
-    const x  = (e.clientX - r.left) / r.width  - 0.5;
-    const y  = (e.clientY - r.top)  / r.height - 0.5;
-    card.style.transform = `translateY(-5px) perspective(900px) rotateY(${x * 3.5}deg) rotateX(${-y * 3.5}deg)`;
-  });
-  card.addEventListener('mouseleave', () => {
-    card.style.transform = '';
   });
 });
 
@@ -191,12 +183,15 @@ const emailText    = document.getElementById('emailText');
 if (copyEmailBtn && toast && emailText) {
   copyEmailBtn.addEventListener('click', () => {
     const textToCopy = emailText.textContent.trim();
-    navigator.clipboard.writeText(textToCopy).then(() => {
-      showToast('Email copied to clipboard!');
-    }).catch(() => {
-      // Fallback
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(textToCopy).then(() => {
+        showToast('Email copied to clipboard');
+      }).catch(() => {
+        window.location.href = `mailto:${textToCopy}`;
+      });
+    } else {
       window.location.href = `mailto:${textToCopy}`;
-    });
+    }
   });
 }
 
@@ -207,5 +202,5 @@ function showToast(message) {
   toast.classList.add('show');
   setTimeout(() => {
     toast.classList.remove('show');
-  }, 3000);
+  }, 2800);
 }
